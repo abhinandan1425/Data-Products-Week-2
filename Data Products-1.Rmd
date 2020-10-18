@@ -1,0 +1,42 @@
+---
+title: "Data Products-1"
+author: "Sumit Narayan"
+date: "18/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Developing Data Products Week 1 Project
+
+### Creating My First Map using Leaflet
+
+I am going to create a map that shows the location of The Taj Mahal in Agra, India.
+
+
+First we will load the library 'leaflet' using following command:
+
+```{r}
+library(leaflet)
+```
+
+Now to create a map, we will use following R code:
+
+
+```{r}
+map <- leaflet() %>%
+addTiles()
+map
+```
+
+Finally, I am going to create a link to the official site of Taj Mahal from where I could get relevant information.
+
+```{r}
+Taj <- c("<a href= 'https://www.tajmahal.gov.in/view_taj.html' >Taj Mahal</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=27.173891, lng=78.042068, popup = Taj)
+```
+The Marker pointed on the map shows the exact location of The Taj Mahal.
